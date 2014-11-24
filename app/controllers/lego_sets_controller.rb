@@ -13,6 +13,19 @@ class LegoSetsController < ApplicationController
     end
   end
 
+  def edit
+    @lego_set = LegoSet.find(params[:id])
+  end
+
+  def update
+    @lego_set = LegoSet.find(params[:id])
+    if @lego_set.update(lego_set_params)
+      redirect_to :root
+    else
+      render :edit
+    end
+  end
+
   def index
     @lego_sets = LegoSet.order(number: :desc)
   end
