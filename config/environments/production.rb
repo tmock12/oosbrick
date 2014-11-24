@@ -5,7 +5,6 @@ Rails.application.configure do
   config.action_controller.perform_caching = true
   config.serve_static_assets = false
   config.assets.js_compressor = :uglifier
-  config.assets.css_compressor = :sass
   config.assets.compile = false
   config.assets.digest = true
   config.log_level = :info
