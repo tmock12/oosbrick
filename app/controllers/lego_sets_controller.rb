@@ -14,7 +14,7 @@ class LegoSetsController < ApplicationController
   end
 
   def index
-    @lego_sets = LegoSet.all
+    @lego_sets = LegoSet.order(number: :desc)
   end
 
   private
