@@ -3,6 +3,7 @@ ruby '2.1.4'
 #ruby-gemset=ooslego
 
 gem 'coffee-rails'
+gem 'formal'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'pg'
