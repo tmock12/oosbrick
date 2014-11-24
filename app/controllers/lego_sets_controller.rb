@@ -20,6 +20,7 @@ class LegoSetsController < ApplicationController
   private
 
   def lego_set_params
-    params.require(:lego_set).permit(:name, :number, :amazon_url, :walmart_url, :lego_url, :price_in_stock)
+    params.require(:lego_set).permit(:name, :number, :amazon_url, :walmart_url,
+                                     :lego_url, :price_in_stock, :tru_url)
   end
 end
