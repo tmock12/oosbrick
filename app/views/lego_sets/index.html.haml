@@ -11,6 +11,7 @@
       %th Amazon in stock?
       %th Lego SAH in stock?
       %th Toys"R"Us in stock?
+      %th Target in stock?
     - @lego_sets.each do |lego|
       %tr
         %td= lego.name
@@ -19,3 +20,4 @@
         %td= lego.amazon_in_stock
         %td= lego.lego_in_stock
         %td= lego.tru_in_stock
+        %td= lego.target_in_stock

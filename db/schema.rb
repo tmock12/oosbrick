@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124171725) do
+ActiveRecord::Schema.define(version: 20141124175059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20141124171725) do
     t.boolean  "lego_in_stock"
     t.string   "tru_url",          limit: 1024
     t.boolean  "tru_in_stock"
+    t.string   "target_url",       limit: 1024
+    t.boolean  "target_in_stock"
   end
 
 end
