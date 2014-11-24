@@ -1,5 +1,5 @@
 class LegoSet < ActiveRecord::Base
-  validates :name, :number, presence: true
+  validates :name, :number, presence: true, uniqueness: {message: 'already exists'}
   after_create :check_stock!
 
   def check_stock!
