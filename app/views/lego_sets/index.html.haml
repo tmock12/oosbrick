@@ -1,6 +1,19 @@
+= link_to "Add New Set", :new_lego_set
+
+%h1 LEGO Stock Check
+
 %table
   %tbody
+    %tr
+      %th Name
+      %th Number
+      %th Walmart in stock?
+      %th Amazon in stock?
+      %th Lego SAH in stock?
     - @lego_sets.each do |lego|
       %tr
         %td= lego.name
         %td= lego.number
+        %td= lego.walmart_in_stock
+        %td= lego.amazon_in_stock
+        %td= lego.lego_in_stock

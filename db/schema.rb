@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124003347) do
+ActiveRecord::Schema.define(version: 20141124013606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,13 +19,16 @@ ActiveRecord::Schema.define(version: 20141124003347) do
   create_table "lego_sets", force: true do |t|
     t.string   "number"
     t.string   "name"
-    t.string   "amazon_url",     limit: 1024
-    t.string   "walmart_url",    limit: 1024
-    t.string   "lego_url",       limit: 1024
+    t.string   "amazon_url",       limit: 1024
+    t.string   "walmart_url",      limit: 1024
+    t.string   "lego_url",         limit: 1024
     t.string   "price_in_stock"
     t.string   "price"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "walmart_in_stock"
+    t.boolean  "amazon_in_stock"
+    t.boolean  "lego_in_stock"
   end
 
 end
