@@ -16,9 +16,14 @@
       %tr
         %td= lego.name
         %td= lego.number
-        %td= lego.walmart_in_stock
-        %td= lego.amazon_in_stock
-        %td= lego.lego_in_stock
-        %td= lego.tru_in_stock
-        %td= lego.target_in_stock
-        %td= link_to "Edit", edit_lego_set_path(lego)
+        %td{class: lego.walmart_in_stock.parameterize}
+          = link_to lego.walmart_in_stock, lego.walmart_url
+        %td{class: lego.amazon_in_stock.parameterize}
+          = link_to lego.amazon_in_stock, lego.amazon_url
+        %td{class: lego.lego_in_stock.parameterize}
+          = link_to lego.lego_in_stock, lego.lego_url
+        %td{class: lego.tru_in_stock.parameterize}
+          = link_to lego.tru_in_stock, lego.tru_url
+        %td{class: lego.target_in_stock.parameterize}
+          = link_to lego.target_in_stock, lego.target_url
+        %td= link_to "edit", edit_lego_set_path(lego)
