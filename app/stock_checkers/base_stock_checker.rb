@@ -3,6 +3,7 @@ require 'open-uri'
 class BaseStockChecker < Struct.new(:url)
 
   def self.in_stock?(url)
+    return nil if url.blank?
     new(url).in_stock?
   end
 
