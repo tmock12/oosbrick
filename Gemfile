@@ -10,8 +10,10 @@ gem 'little_decorator'
 gem 'nokogiri'
 gem 'pg'
 gem 'pry-rails'
+gem 'puma'
 gem 'rails', '4.1.8'
 gem 'sass-rails'
+gem 'sucker_punch'
 gem 'uglifier'
 
 group :test do

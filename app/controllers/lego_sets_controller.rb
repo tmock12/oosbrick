@@ -7,6 +7,7 @@ class LegoSetsController < ApplicationController
   def create
     @lego_set = LegoSet.new(lego_set_params)
     if @lego_set.save
+      StockCheckerJob.new.async.check_stock(@lego_set)
       redirect_to :root
     else
       render :new
@@ -20,6 +21,7 @@ class LegoSetsController < ApplicationController
   def update
     @lego_set = LegoSet.find(params[:id])
     if @lego_set.update(lego_set_params)
+      StockCheckerJob.new.async.check_stock(@lego_set)
       redirect_to :root
     else
       render :edit

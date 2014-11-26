@@ -1,6 +1,5 @@
 class LegoSet < ActiveRecord::Base
   validates :name, :number, presence: true, uniqueness: {message: 'already exists'}
-  after_save :check_stock!
 
   def check_stock!
     self.update_columns(stock_hash)
