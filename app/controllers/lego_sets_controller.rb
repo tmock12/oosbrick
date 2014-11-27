@@ -8,15 +8,14 @@ class LegoSetsController < ApplicationController
   def create
     @lego_set = LegoSet.new(lego_set_params)
     if @lego_set.save
-      StockCheckerJob.new.async.check_stock(@lego_set)
-      redirect_to :root
+      redirect_to :root, notice: "#{@lego_set.name} has been created succesfully and is pending approval. It should be approved sometime within the next 12 hours"
     else
       render :new
     end
   end
 
   def index
-    @lego_sets = decorate(LegoSet.order(:number))
+    @lego_sets = decorate(LegoSet.approved.order(:number))
   end
 
   def edit
@@ -31,6 +30,13 @@ class LegoSetsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def approve
+    lego_set = LegoSet.find(params[:id])
+    lego_set.approve!
+    StockCheckerJob.new.async.check_stock(@lego_set)
+    redirect_to :admins, notice: "You have approved #{lego_set.name}"
   end
 
   private

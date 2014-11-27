@@ -24,3 +24,5 @@
           = link_to lego.target_in_stock, lego.target_url, target: '_blank'
         - if current_user
           %td= link_to "edit", edit_lego_set_path(lego)
+          -  unless lego.approved?
+            %td= link_to "approve", approve_lego_set_path(lego)

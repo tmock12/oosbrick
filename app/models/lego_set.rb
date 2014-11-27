@@ -2,8 +2,15 @@ class LegoSet < ActiveRecord::Base
   validates :name, :number, presence: true, uniqueness: {message: 'already exists'}
   validates :number, numericality: true
 
+  scope :approved, ->{ where(approved: true) }
+  scope :pending_approval, ->{ where(approved: false) }
+
   def check_stock!
     self.update_columns(stock_hash)
+  end
+
+  def approve!
+    update_attribute(:approved, true)
   end
 
   private
