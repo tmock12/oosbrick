@@ -13,4 +13,7 @@ class LegoSetDecorator < LittleDecorator
     end
   end
 
+  def amazon_affiliate_url
+    AmazonAffiliate.new(amazon_url).url
+  end
 end

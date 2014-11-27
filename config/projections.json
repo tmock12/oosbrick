@@ -1,0 +1,17 @@
+{
+  "app/decorators/*_decorator.rb": {
+    "command": "decorator",
+      "alternate": "spec/decorators/%s_decorator_spec.rb",
+      "template": "class %SDecorator < BaseDecorator\nend"
+  },
+    "app/stock_checkers/*_stock_checker.rb": {
+      "command": "stock_checker",
+      "alternate": "spec/stock_checkers/%s_stock_checker_spec.rb",
+      "template": "class %SStockChecker < BaseStockChecker\nend"
+  },
+  "app/affiliates/*_affiliate.rb": {
+    "command": "affiliate",
+      "alternate": "spec/decorators/%s_affiliate_spec.rb",
+      "template": "class %SAffiliate < BaseAffiliate\nend"
+  }
+}
