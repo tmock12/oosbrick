@@ -1,5 +1,5 @@
 class LegoSetsController < ApplicationController
-  before_filter :require_user, only: [:edit, :update]
+  before_filter :require_user, only: [:edit, :update, :approve]
 
   def new
     @lego_set ||= LegoSet.new
