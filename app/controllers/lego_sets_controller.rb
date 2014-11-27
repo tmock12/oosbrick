@@ -29,7 +29,7 @@ class LegoSetsController < ApplicationController
   end
 
   def index
-    @lego_sets = decorate(LegoSet.order(number: :desc))
+    @lego_sets = decorate(LegoSet.order(:number))
   end
 
   private
