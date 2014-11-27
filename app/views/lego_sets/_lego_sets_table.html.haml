@@ -1,0 +1,26 @@
+%table
+  %tbody
+    %tr
+      %th Number
+      %th Name
+      %th Walmart in stock?
+      %th Amazon in stock?
+      %th Lego SAH in stock?
+      %th Toys"R"Us in stock?
+      %th Target in stock?
+    - lego_sets.each do |lego|
+      %tr
+        %td= lego.number
+        %td= lego.name
+        %td{class: lego.walmart_in_stock.parameterize}
+          = link_to lego.walmart_in_stock, lego.walmart_url, target: '_blank'
+        %td{class: lego.amazon_in_stock.parameterize}
+          = link_to lego.amazon_in_stock, lego.amazon_affiliate_url, target: '_blank'
+        %td{class: lego.lego_in_stock.parameterize}
+          = link_to lego.lego_in_stock, lego.lego_url, target: '_blank'
+        %td{class: lego.tru_in_stock.parameterize}
+          = link_to lego.tru_in_stock, lego.tru_url, target: '_blank'
+        %td{class: lego.target_in_stock.parameterize}
+          = link_to lego.target_in_stock, lego.target_url, target: '_blank'
+        - if current_user
+          %td= link_to "edit", edit_lego_set_path(lego)

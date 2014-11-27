@@ -1,0 +1,19 @@
+= form_tag :sessions, id: "sign_in" do
+  %header
+    %h1 Sign In
+
+  - if alert
+    %p.flash.alert= alert
+
+  %fieldset
+    %dl
+      %dt
+        = label_tag :email, "Email Address"
+      %dd
+        = email_field_tag :email
+      %dt
+        = label_tag :password
+      %dd
+        = password_field_tag :password
+  %fieldset.actions
+    = submit_tag "Sign In"

@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 ruby '2.1.4'
 #ruby-gemset=ooslego
 
+gem 'authem'
 gem 'addressable'
 gem 'coffee-rails'
 gem 'formal'
@@ -21,6 +22,9 @@ gem 'uglifier'
 
 group :test do
   gem 'rspec-rails'
+  gem 'fabrication'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
 end
 
 group :production do

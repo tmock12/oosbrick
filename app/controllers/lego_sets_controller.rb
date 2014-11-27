@@ -1,4 +1,5 @@
 class LegoSetsController < ApplicationController
+  before_filter :require_user, only: [:edit, :update]
 
   def new
     @lego_set ||= LegoSet.new
@@ -14,6 +15,10 @@ class LegoSetsController < ApplicationController
     end
   end
 
+  def index
+    @lego_sets = decorate(LegoSet.order(:number))
+  end
+
   def edit
     @lego_set = LegoSet.find(params[:id])
   end
@@ -26,10 +31,6 @@ class LegoSetsController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def index
-    @lego_sets = decorate(LegoSet.order(:number))
   end
 
   private
