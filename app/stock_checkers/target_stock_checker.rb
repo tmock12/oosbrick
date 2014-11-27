@@ -3,8 +3,5 @@ class TargetStockChecker < BaseStockChecker
     !!page.at_css("#textblock1 #addToCart") &&
       page.at_css("#textblock1 .availmsg").try(:text).to_s !~ /out of stock/
   end
-
-  def needs_preprocessing?
-    true
-  end
 end
+
