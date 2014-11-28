@@ -1,6 +1,7 @@
-= form_for @lego_set do |f|
+.box#session
   %header
     %h1 Add a lego set
-  = render 'form', f: f
-  %fieldset.actions
-    = submit_tag "Add Set"
+  = form_for @lego_set do |f|
+    = render 'form', f: f
+    %fieldset.actions
+      = submit_tag "Add Set"

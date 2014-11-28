@@ -1,5 +1,9 @@
-= link_to "Add New Set", :new_lego_set
+%section#home
+  %p
+    Check the current stock of hard to find lego sets
 
-%h1 LEGO Stock Check
-
-= render 'lego_sets_table', lego_sets: @lego_sets
+.box#masthead
+  %h1 Current Stock
+  = render 'lego_sets_table', lego_sets: @lego_sets
+  %p#complete
+    = link_to "Add New Set", :new_lego_set, class: 'button'
