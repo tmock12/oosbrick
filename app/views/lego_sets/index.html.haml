@@ -2,8 +2,12 @@
   %p
     Check the current stock of hard to find lego sets
 
-.box#masthead
-  %h1 Current Stock
+.box#lego_sets
+  -# %h1 Current Stock
+  %header
+    %input.search{type: 'text', placeholder: "Search by name or number"}
+    %button.sort{type: 'submit', data: {sort: "name"}} Sort by Name
+    %button.sort{type: 'submit', data: {sort: "number"}} Sort by Number
   = render 'lego_sets_table', lego_sets: @lego_sets
   %p#complete
     = link_to "Add New Set", :new_lego_set, class: 'button'

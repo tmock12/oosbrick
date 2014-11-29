@@ -1,17 +1,17 @@
 %table
-  %tbody
-    %tr
-      %th Number
-      %th Name
-      %th Walmart in stock?
-      %th Amazon in stock?
-      %th Lego SAH in stock?
-      %th Toys"R"Us in stock?
-      %th Target in stock?
+  %thead
+    %th.sort Number
+    %th.sort Name
+    %th Walmart in stock?
+    %th Amazon in stock?
+    %th Lego SAH in stock?
+    %th Toys"R"Us in stock?
+    %th Target in stock?
+  %tbody.list
     - lego_sets.each do |lego|
       %tr
-        %td= lego.number
-        %td= lego.name
+        %td.number= lego.number
+        %td.name= lego.name
         %td{class: lego.walmart_in_stock.parameterize}
           = link_to lego.walmart_in_stock, lego.walmart_affiliate_url, target: '_blank'
         %td{class: lego.amazon_in_stock.parameterize}
