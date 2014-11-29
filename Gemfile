@@ -8,6 +8,7 @@ gem 'coffee-rails'
 gem 'formal'
 gem 'haml-rails'
 gem 'jquery-rails'
+gem 'lego_stock_checker', git: "https://#{ENV.fetch("LSC_TOKEN")}@github.com/tmock12/lego_stock_checker.git"
 gem 'little_decorator'
 gem 'nokogiri'
 gem 'pg'

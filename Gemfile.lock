@@ -1,3 +1,11 @@
+GIT
+  remote: https://8bb0da6cc9d7baac8acf1650b236de1903b33d13@github.com/tmock12/lego_stock_checker.git
+  revision: 51646bb47104cc149f2164767034f3d56f19d7ec
+  specs:
+    lego_stock_checker (0.0.1)
+      nokogiri (~> 1.6.1)
+      phantomjs.rb (~> 2.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -95,7 +103,7 @@ GEM
     minitest (5.4.3)
     multi_json (1.10.1)
     multi_test (0.1.1)
-    nokogiri (1.6.4.1)
+    nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
     pg (0.17.1)
     phantomjs.rb (2.0.0)
@@ -196,6 +204,7 @@ DEPENDENCIES
   formal
   haml-rails
   jquery-rails
+  lego_stock_checker!
   little_decorator
   nokogiri
   pg
