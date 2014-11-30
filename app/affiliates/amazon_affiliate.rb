@@ -8,6 +8,6 @@ class AmazonAffiliate < BaseAffiliate
   private
 
   def sample_tag
-    "ooslego02-20"
+    "bpooslego-20"
   end
 end
