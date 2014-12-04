@@ -24,4 +24,8 @@ class LegoSetDecorator < LittleDecorator
   def lego_affiliate_url
     LegoAffiliate.new(lego_url).url
   end
+
+  def target_affiliate_url
+    TargetAffiliate.new(target_url).url
+  end
 end
