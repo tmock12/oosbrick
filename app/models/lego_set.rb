@@ -16,12 +16,22 @@ class LegoSet < ActiveRecord::Base
   private
 
   def stock_hash
+    walmart ||= LegoStockChecker::WalmartCheck.in_stock?(walmart_url)
+    amazon  ||= LegoStockChecker::AmazonCheck.in_stock?(amazon_url)
+    lego    ||= LegoStockChecker::LegoShopCheck.in_stock?(lego_url)
+    tru     ||= LegoStockChecker::TruCheck.in_stock?(tru_url)
+    target  ||= LegoStockChecker::TargetCheck.in_stock?(target_url)
     {
-      walmart_in_stock: LegoStockChecker::WalmartCheck.in_stock?(walmart_url)[:in_stock],
-      amazon_in_stock: LegoStockChecker::AmazonCheck.in_stock?(amazon_url)[:in_stock],
-      lego_in_stock: LegoStockChecker::LegoShopCheck.in_stock?(lego_url)[:in_stock],
-      tru_in_stock: LegoStockChecker::TruCheck.in_stock?(tru_url)[:in_stock],
-      target_in_stock: LegoStockChecker::TargetCheck.in_stock?(target_url)[:in_stock]
+      walmart_in_stock: walmart[:in_stock],
+      walmart_price: walmart[:price],
+      amazon_in_stock: amazon[:in_stock],
+      amazon_price: amazon[:price],
+      lego_in_stock: lego[:in_stock],
+      lego_price: lego[:price],
+      tru_in_stock: tru[:in_stock],
+      tru_price: tru[:price],
+      target_in_stock: target[:in_stock],
+      target_price: target[:price]
     }
   end
 end

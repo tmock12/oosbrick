@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141127174326) do
+ActiveRecord::Schema.define(version: 20141205024945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,6 +48,11 @@ ActiveRecord::Schema.define(version: 20141127174326) do
     t.boolean  "target_in_stock"
     t.integer  "number"
     t.boolean  "approved",                      default: false
+    t.float    "walmart_price"
+    t.float    "amazon_price"
+    t.float    "lego_price"
+    t.float    "tru_price"
+    t.float    "target_price"
   end
 
   create_table "users", force: true do |t|

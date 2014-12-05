@@ -4,6 +4,20 @@ class LegoSetDecorator < LittleDecorator
     define_method "#{shop}_in_stock" do
       case record.send("#{shop}_in_stock").to_s
       when 'true'
+        price = number_to_currency(record.send("#{shop}_price")) || "$NA"
+        %(In Stock- #{price}) || "Price Not Avail"
+      when 'false'
+        "OOS"
+      else
+        "na"
+      end
+    end
+  end
+
+  %w[walmart amazon lego tru target].each do |shop|
+    define_method "#{shop}_class" do
+      case record.send("#{shop}_in_stock").to_s
+      when 'true'
         "In Stock"
       when 'false'
         "OOS"

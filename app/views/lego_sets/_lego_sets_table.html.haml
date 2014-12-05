@@ -12,15 +12,15 @@
       %tr
         %td.number= lego.number
         %td.name= lego.name
-        %td{class: lego.walmart_in_stock.parameterize}
+        %td{class: lego.walmart_class}
           = link_to lego.walmart_in_stock, lego.walmart_affiliate_url, target: '_blank'
-        %td{class: lego.amazon_in_stock.parameterize}
+        %td{class: lego.amazon_class}
           = link_to lego.amazon_in_stock, lego.amazon_affiliate_url, target: '_blank'
-        %td{class: lego.lego_in_stock.parameterize}
+        %td{class: lego.lego_class}
           = link_to lego.lego_in_stock, lego.lego_affiliate_url, target: '_blank'
-        %td{class: lego.tru_in_stock.parameterize}
+        %td{class: lego.tru_class}
           = link_to lego.tru_in_stock, lego.tru_url, target: '_blank'
-        %td{class: lego.target_in_stock.parameterize}
+        %td{class: lego.target_class}
           = link_to lego.target_in_stock, lego.target_affiliate_url, target: '_blank'
         - if current_user
           %td= link_to "edit", edit_lego_set_path(lego)
