@@ -1,6 +1,6 @@
 GIT
   remote: https://8bb0da6cc9d7baac8acf1650b236de1903b33d13@github.com/tmock12/lego_stock_checker.git
-  revision: 6b101e248a4cdf0bf62a092acf8ae60e85d6b7a1
+  revision: 7d086518ed21607dfe2d122b0ef5f43702500857
   specs:
     lego_stock_checker (0.1.1)
       nokogiri (~> 1.6.1)
