@@ -23,7 +23,7 @@ class LegoSetDecorator < LittleDecorator
         "OOS"
       else
         "na"
-      end
+      end.parameterize('_')
     end
   end
 
